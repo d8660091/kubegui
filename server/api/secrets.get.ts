@@ -6,12 +6,7 @@ export default defineEventHandler(async (event) => {
 
   const k8sApi = kc.makeApiClient(k8s.CoreV1Api);
 
-  const query = getQuery(event);
+  const res = await k8sApi.listSecretForAllNamespaces();
 
-  const resp = await k8sApi.readNamespacedPod(
-    query.name as string,
-    query.namespace as string
-  );
-
-  return resp.body;
+  return res.body;
 });
