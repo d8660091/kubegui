@@ -28,7 +28,14 @@
     <label class="form-check-label" for="isPrevious">Previous</label>
   </div>
   <div class="logs ps-2">
-    {{ logs }}
+    <client-only>
+      <highlightjs
+        language="plaintext"
+        :autodetect="false"
+        :code="logs"
+        v-if="logs"
+      ></highlightjs>
+    </client-only>
   </div>
 </template>
 

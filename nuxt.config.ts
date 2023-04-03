@@ -5,4 +5,5 @@ export default defineNuxtConfig({
     "~/node_modules/highlight.js/styles/github.css",
   ],
   script: [{ src: "~/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" }],
+  plugins: ["~/plugins/highlightjs.client.ts"],
 });
